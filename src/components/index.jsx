@@ -7,18 +7,27 @@ export default class Pagination extends React.Component {
     total: PropTypes.number.isRequired,
     size: PropTypes.number.isRequired,
     currentPage: PropTypes.number,
-    onPageChange: PropTypes.func
+    onPageChange: PropTypes.func,
+    locale: PropTypes.object
   }
 
   constructor (props) {
     super(props)
-    const {currentPage = 1, total, size} = props
+    const {currentPage = 1, total, size, locale = {
+      next_5: 'Next 5 pages',
+      prev_5: 'Previous 5 pages',
+      last_page: 'Last Page',
+      next_page: 'Next page',
+      prev_page: 'Previous page'
+    }} = props
     const pages = Math.ceil(total / size)
     this.state = {
       currentPage,
-      pages
+      pages,
+      locale
     }
   }
+
   @autobind
   handlePageChange (currentPage) {
     let page
@@ -39,7 +48,7 @@ export default class Pagination extends React.Component {
     })
   }
   render () {
-    const {currentPage, pages} = this.state
+    const {currentPage, pages, locale} = this.state
     // const realPageArray = []
     // for (let i = 0; i < pages; i++) {
     //   realPageArray.push(i + 1)
@@ -47,22 +56,22 @@ export default class Pagination extends React.Component {
     const showPageArray = []
     const lastPage = {
       text: pages,
-      alt: 'Last page',
+      alt: `${locale.last_page}:${pages}`,
       name: pages
     }
     const firstPage = {
       text: 1,
-      alt: 'First page',
+      alt: 1,
       name: 1
     }
     const nextFivePages = {
       text: '>>>',
-      alt: 'Next 5 pages',
+      alt: locale.next_5,
       name: 'next_5'
     }
     const prevFivePages = {
       text: '<<<',
-      alt: 'Previous 5 pages',
+      alt: locale.prev_5,
       name: 'prev_5'
     }
     const generatePageObject = i => ({
@@ -98,9 +107,9 @@ export default class Pagination extends React.Component {
     const prevClassName = currentPage !== 1 ? `${classPrefix}-pagination-pager` : `${classPrefix}-pagination-pager ${classPrefix}-pagination-pager-disabled`
     return (
       <ul className={`${classPrefix}-pagination`}>
-        <li onClick={currentPage !== 1 ? this.handlePageChange.bind(this, 'prev') : false} className={prevClassName}><span>{'<'}</span></li>
+        <li title={locale.prev_page} onClick={currentPage !== 1 ? this.handlePageChange.bind(this, 'prev') : false} className={prevClassName}><span>{'<'}</span></li>
         {showPageArray.map((page, index) => <Pager key={index} page={page} currentPage={currentPage} classPrefix={`${classPrefix}-pagination`} handlePageChange={this.handlePageChange}/>)}
-        <li onClick={currentPage !== pages ? this.handlePageChange.bind(this, 'next') : false} className={nextClassName}><span>{'>'}</span></li>
+        <li title={locale.next_page} onClick={currentPage !== pages ? this.handlePageChange.bind(this, 'next') : false} className={nextClassName}><span>{'>'}</span></li>
       </ul>
     )
   }

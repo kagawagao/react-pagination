@@ -8,7 +8,7 @@ export default class extends React.Component {
   }
   render () {
     return (
-      <Pagination total={500} size={10} onPageChange={this.handlePageChange}/>
+      <Pagination total={10000} size={10} onPageChange={this.handlePageChange}/>
     )
   }
 }

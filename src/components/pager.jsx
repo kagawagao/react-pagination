@@ -11,8 +11,8 @@ export default class Pager extends React.Component {
     const {page, classPrefix, currentPage} = this.props
     const className = page.name !== currentPage ? `${classPrefix}-pager` : `${classPrefix}-pager ${classPrefix}-pager-active`
     return (
-      <li className={className} onClick={this.props.handlePageChange.bind(this, page.name)} >
-        <span alt={page.alt}>{page.text}</span>
+      <li title={page.alt} className={className} onClick={this.props.handlePageChange.bind(this, page.name)} >
+        <span>{page.text}</span>
       </li>
     )
   }

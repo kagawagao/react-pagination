@@ -9,9 +9,9 @@ $disabledColor: #dadddc;
   font-size: 1.6 * $defaultSize;
   .#{$pagePrefix}-pager {
     list-style: none;
-    width: 1.6em;
-    height: 1.6em;
-    line-height: 1.6em;
+    width: 2.6 * $defaultSize;
+    height: 2.6 * $defaultSize;
+    line-height: 2.6 * $defaultSize;
     text-align: center;
     border: 1px solid $defaultColor;
     margin-right: 5px;
@@ -19,6 +19,9 @@ $disabledColor: #dadddc;
     box-sizing: border-box;
     cursor: pointer;
     transition: all .3s ease;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     &:hover {
       border-color: darken($defaultColor, $amount);
       outline-color: darken($defaultColor, $amount);
