@@ -18,13 +18,15 @@ export default class Pagination extends React.Component {
       prev_5: 'Previous 5 pages',
       last_page: 'Last Page',
       next_page: 'Next page',
-      prev_page: 'Previous page'
+      prev_page: 'Previous page',
+      jump: 'Jump'
     }} = props
     const pages = Math.ceil(total / size)
     this.state = {
       currentPage,
       pages,
-      locale
+      locale,
+      disabled: true
     }
   }
 
@@ -47,12 +49,26 @@ export default class Pagination extends React.Component {
       ...this.state, currentPage: page
     })
   }
+
+  @autobind
+  handleInput (e) {
+    const value = +e.target.value
+    this.setState({
+      ...this.state,
+      jumpPage: value,
+      disabled: !(typeof value === 'number' && value > 0 && value <= this.state.pages)
+    })
+  }
+
+  @autobind
+  handeClick () {
+    const {jumpPage, pages} = this.state
+    if (typeof jumpPage === 'number' && jumpPage > 0 && jumpPage <= pages) {
+      this.handlePageChange(jumpPage)
+    }
+  }
   render () {
-    const {currentPage, pages, locale} = this.state
-    // const realPageArray = []
-    // for (let i = 0; i < pages; i++) {
-    //   realPageArray.push(i + 1)
-    // }
+    const {currentPage, pages, locale, disabled} = this.state
     const showPageArray = []
     const lastPage = {
       text: pages,
@@ -106,11 +122,15 @@ export default class Pagination extends React.Component {
     const nextClassName = currentPage !== pages ? `${classPrefix}-pagination-pager` : `${classPrefix}-pagination-pager ${classPrefix}-pagination-pager-disabled`
     const prevClassName = currentPage !== 1 ? `${classPrefix}-pagination-pager` : `${classPrefix}-pagination-pager ${classPrefix}-pagination-pager-disabled`
     return (
-      <ul className={`${classPrefix}-pagination`}>
-        <li title={locale.prev_page} onClick={currentPage !== 1 ? this.handlePageChange.bind(this, 'prev') : false} className={prevClassName}><span>{'<'}</span></li>
-        {showPageArray.map((page, index) => <Pager key={index} page={page} currentPage={currentPage} classPrefix={`${classPrefix}-pagination`} handlePageChange={this.handlePageChange}/>)}
-        <li title={locale.next_page} onClick={currentPage !== pages ? this.handlePageChange.bind(this, 'next') : false} className={nextClassName}><span>{'>'}</span></li>
-      </ul>
+      <div className={`${classPrefix}-pagination`}>
+        <ul className={`${classPrefix}-pagination-pages`}>
+          <li title={locale.prev_page} onClick={currentPage !== 1 ? this.handlePageChange.bind(this, 'prev') : false} className={prevClassName}><span>{'<'}</span></li>
+          {showPageArray.map((page, index) => <Pager key={index} page={page} currentPage={currentPage} classPrefix={`${classPrefix}-pagination`} handlePageChange={this.handlePageChange}/>)}
+          <li title={locale.next_page} onClick={currentPage !== pages ? this.handlePageChange.bind(this, 'next') : false} className={nextClassName}><span>{'>'}</span></li>
+        </ul>
+        <input onChange={this.handleInput} className={`${classPrefix}-pagination-jump`}/>
+        <button disabled={disabled} onClick={this.handeClick} className={disabled ? `${classPrefix}-pagination-button ${classPrefix}-pagination-button-disabled` : `${classPrefix}-pagination-button`}>{locale.jump}</button>
+      </div>
     )
   }
 }

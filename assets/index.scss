@@ -5,13 +5,18 @@ $pagePrefix: nd-pagination;
 $defaultSize: 1em / 1.6;
 $disabledColor: #dadddc;
 .#{$prefix}-pagination {
+  padding: 6px 6px;
   display: flex;
   font-size: 1.6 * $defaultSize;
+  .#{$pagePrefix}-pages {
+    display: flex;
+    margin: 0px;
+  }
   .#{$pagePrefix}-pager {
     list-style: none;
     width: 2.6 * $defaultSize;
     height: 2.6 * $defaultSize;
-    line-height: 2.6 * $defaultSize;
+    line-height: 1.5;
     text-align: center;
     border: 1px solid $defaultColor;
     margin-right: 5px;
@@ -36,6 +41,48 @@ $disabledColor: #dadddc;
     color: #fff;
   }
   .#{$pagePrefix}-pager-disabled {
+    border-color: $disabledColor;
+    outline-color: $disabledColor;
+    background-color: $disabledColor;
+    color: #000;
+    cursor: not-allowed;
+    &:hover {
+      border-color: $disabledColor;
+      outline-color: $disabledColor;
+      background-color: $disabledColor;
+      color: #000;
+    }
+  }
+  .#{$pagePrefix}-jump {
+    outline: none;
+    width: 4 * $defaultSize;
+    margin-right: 5px;
+    height: 2.6 * $defaultSize;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+    border: 1px solid $defaultColor;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all .3s ease;
+  }
+  .#{$pagePrefix}-button {
+    padding: 0 6px;
+    vertical-align: middle;
+    outline: none;
+    height: 2.6 * $defaultSize;
+    line-height: 1.5;
+    color: #fff;
+    border: 1px solid $defaultColor;
+    background-color: $defaultColor;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .3s ease;
+    &:hover {
+      background-color: darken($defaultColor, $amount);
+    }
+  }
+  .#{$pagePrefix}-button-disabled {
     border-color: $disabledColor;
     outline-color: $disabledColor;
     background-color: $disabledColor;

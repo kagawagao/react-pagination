@@ -24,8 +24,16 @@ export default class extends React.Component {
     console.log(page)
   }
   render () {
+    const locale = {
+      next_5: 'Next 5 pages',
+      prev_5: 'Previous 5 pages',
+      last_page: 'Last Page',
+      next_page: 'Next page',
+      prev_page: 'Previous page',
+      jump: 'Jump'
+    }
     return (
-      <Pagination total={500} size={10} onPageChange={this.handlePageChange}/>
+      <Pagination total={500} size={10} onPageChange={this.handlePageChange} locale={locale}/>
     )
   }
 }
