@@ -1,3 +1,5 @@
+# react-pagination
+
 [![Build Status](https://travis-ci.org/kagawagao/react-pagination.svg?branch=master)](https://travis-ci.org/kagawagao/react-pagination)
 [![npm](https://img.shields.io/npm/v/nd-rc-pagination.svg)](https://npmjs.org/package/nd-rc-pagination)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
@@ -5,7 +7,6 @@
 [![bitHound Code](https://www.bithound.io/github/kagawagao/react-pagination/badges/code.svg)](https://www.bithound.io/github/kagawagao/react-pagination)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
 [![bitHound Overall Score](https://www.bithound.io/github/kagawagao/react-pagination/badges/score.svg)](https://www.bithound.io/github/kagawagao/react-pagination)
-# react-pagination
 React UI Component - Pagination
 ## Install
 ```
