@@ -4,6 +4,7 @@
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/kagawagao/react-pagination/badges/code.svg)](https://www.bithound.io/github/kagawagao/react-pagination)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
+[![bitHound Overall Score](https://www.bithound.io/github/kagawagao/react-pagination/badges/score.svg)](https://www.bithound.io/github/kagawagao/react-pagination)
 # react-pagination
 React UI Component - Pagination
 ## Install
