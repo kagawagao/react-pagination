@@ -1,0 +1,48 @@
+$prefix: nd ;
+$defaultColor : #2db7f5;
+$amount: 10%;
+$pagePrefix: nd-pagination;
+$defaultSize: 1em / 1.6;
+$disabledColor: #dadddc;
+.#{$prefix}-pagination {
+  display: flex;
+  font-size: 1.6 * $defaultSize;
+  .#{$pagePrefix}-pager {
+    list-style: none;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    text-align: center;
+    border: 1px solid $defaultColor;
+    margin-right: 5px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover {
+      border-color: darken($defaultColor, $amount);
+      outline-color: darken($defaultColor, $amount);
+      background-color: darken($defaultColor, $amount);
+      color: #fff;
+    }
+  }
+  .#{$pagePrefix}-pager-active {
+    border-color: darken($defaultColor, $amount);
+    outline-color: darken($defaultColor, $amount);
+    background-color: darken($defaultColor, $amount);
+    color: #fff;
+  }
+  .#{$pagePrefix}-pager-disabled {
+    border-color: $disabledColor;
+    outline-color: $disabledColor;
+    background-color: $disabledColor;
+    color: #000;
+    cursor: not-allowed;
+    &:hover {
+      border-color: $disabledColor;
+      outline-color: $disabledColor;
+      background-color: $disabledColor;
+      color: #000;
+    }
+  }
+}

@@ -1,11 +1,3 @@
-# react-pagination
-React UI Component - Pagination
-## Install
-```
-$ npm install nd-rc-pagination --save
-```
-## Use
-```jsx
 import React from 'react'
 import Pagination from 'nd-rc-pagination'
 import 'nd-rc-pagination/assets/index.scss'
@@ -20,4 +12,3 @@ export default class extends React.Component {
     )
   }
 }
-```
