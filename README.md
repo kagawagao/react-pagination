@@ -1,6 +1,7 @@
 # react-pagination
 
 [![Build Status](https://travis-ci.org/kagawagao/react-pagination.svg?branch=master)](https://travis-ci.org/kagawagao/react-pagination)
+[![Coverage Status](https://coveralls.io/repos/github/kagawagao/react-pagination/badge.svg?branch=master)](https://coveralls.io/github/kagawagao/react-pagination?branch=master)
 [![npm](https://img.shields.io/npm/v/nd-rc-pagination.svg)](https://npmjs.org/package/nd-rc-pagination)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/kagawagao/react-pagination/badges/devDependencies.svg)](https://www.bithound.io/github/kagawagao/react-pagination/master/dependencies/npm)
