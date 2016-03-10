@@ -1,7 +1,7 @@
 {
-  "name": "rc-grid-examples",
+  "name": "nd-rc-pagination-examples",
   "version": "1.0.0",
-  "description": "Get started with rc-grid!",
+  "description": "Get started with nd-rc-pagination!",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.0",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://kagawagao@github.com/kagawagao/react-grid.git"
+    "url": "git+https://kagawagao@github.com/kagawagao/react-pagination.git"
   },
   "keywords": [
     "React"
@@ -17,7 +17,7 @@
   "author": "kingsongao1221@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kagawagao/react-grid/issues"
+    "url": "https://github.com/kagawagao/react-pagination/issues"
   },
   "scripts": {
     "clean": "rimraf dist",
