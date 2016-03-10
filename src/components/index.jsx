@@ -64,7 +64,7 @@ export default class Pagination extends React.Component {
 
   @autobind
   handeClick () {
-    const {jumpPage, pages} = this.state
+    const {jumpPage} = this.state
     this.handlePageChange(jumpPage)
   }
   render () {
