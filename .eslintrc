@@ -62,14 +62,14 @@
       "SwitchCase": 1
     }],
     "linebreak-style": [2, "unix"],
-    "prefer-arrow-callback": 2,
+    "prefer-arrow-callback": 0,
     "prefer-const": 1,
     "quotes": [2, "single"],
     "semi": [2, "never"],
     "strict": [2, "never"],
     "yoda": [2, "never"],
 
-    "jsx-quotes": [2, "prefer-double"],
+    "jsx-quotes": 1,
 
     "no-alert": 2,
     "no-const-assign": 2,

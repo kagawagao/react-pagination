@@ -1,2 +1,4 @@
-lib/
-**.md
+lib
+*.md
+tests
+*.config.js
