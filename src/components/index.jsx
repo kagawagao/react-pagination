@@ -44,7 +44,9 @@ export default class Pagination extends React.Component {
     } else if (currentPage === 'prev_5') {
       page = this.state.currentPage - 5
     }
-    this.props.onPageChange(page)
+    if (typeof this.props.onPageChange === 'function') {
+      this.props.onPageChange(page)
+    }
     this.setState({
       ...this.state, currentPage: page
     })
@@ -129,7 +131,7 @@ export default class Pagination extends React.Component {
           <li title={locale.next_page} onClick={currentPage !== pages ? this.handlePageChange.bind(this, 'next') : false} className={nextClassName}><span>{'>'}</span></li>
         </ul>
         <input onChange={this.handleInput} className={`${classPrefix}-pagination-jump`}/>
-        <button disabled={disabled} onClick={this.handeClick} className={disabled ? `${classPrefix}-pagination-button ${classPrefix}-pagination-button-disabled` : `${classPrefix}-pagination-button`}>{locale.jump}</button>
+        <button disabled={disabled} onClick={this.handeClick.bind(this)} className={disabled ? `${classPrefix}-pagination-button ${classPrefix}-pagination-button-disabled` : `${classPrefix}-pagination-button`}>{locale.jump}</button>
       </div>
     )
   }
