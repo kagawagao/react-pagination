@@ -1,7 +1,8 @@
 {
   "ignore": [
     "**/node_modules/**",
-    "**/lib/**"
+    "**/lib/**",
+    "**/examples/**"
   ],
   "test": [
     "**/test/**",
