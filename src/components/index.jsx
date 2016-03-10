@@ -1,9 +1,7 @@
 import React, {PropTypes} from 'react'
 import Pager from './pager'
 import autobind from 'autobind-decorator'
-function noop () {
 
-}
 export default class Pagination extends React.Component {
   static propTypes = {
     total: PropTypes.number.isRequired,
@@ -23,7 +21,6 @@ export default class Pagination extends React.Component {
       prev_page: 'Previous page',
       jump: 'Jump'
     }} = props
-    const hasPageChange = props.onPageChange !== noop
     const pages = Math.ceil(total / size)
     this.state = {
       currentPage: currentPage || 1,
