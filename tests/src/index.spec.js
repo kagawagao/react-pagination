@@ -118,4 +118,5 @@ describe('Dom Rendering', function () {
     TestUtils.Simulate.change(input)
     TestUtils.Simulate.click(jump)
     expect(pagination.state.currentPage).to.equal(33)
+  })
 })
