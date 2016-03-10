@@ -1,7 +1,9 @@
 import React, {PropTypes} from 'react'
 import Pager from './pager'
 import autobind from 'autobind-decorator'
+function noop () {
 
+}
 export default class Pagination extends React.Component {
   static propTypes = {
     total: PropTypes.number.isRequired,
@@ -13,7 +15,7 @@ export default class Pagination extends React.Component {
 
   constructor (props) {
     super(props)
-    const {currentPage = 1, total, size, locale = {
+    const {currentPage, total, size, locale = {
       next_5: 'Next 5 pages',
       prev_5: 'Previous 5 pages',
       last_page: 'Last Page',
@@ -21,9 +23,10 @@ export default class Pagination extends React.Component {
       prev_page: 'Previous page',
       jump: 'Jump'
     }} = props
+    const hasPageChange = props.onPageChange !== noop
     const pages = Math.ceil(total / size)
     this.state = {
-      currentPage,
+      currentPage: currentPage || 1,
       pages,
       locale,
       disabled: true
@@ -33,16 +36,16 @@ export default class Pagination extends React.Component {
   @autobind
   handlePageChange (currentPage) {
     let page
-    if (typeof currentPage === 'number') {
-      page = currentPage
+    if (currentPage === 'prev_5') {
+      page = this.state.currentPage - 5
     } else if (currentPage === 'next') {
       page = this.state.currentPage + 1
     } else if (currentPage === 'prev') {
       page = this.state.currentPage - 1
     } else if (currentPage === 'next_5') {
       page = this.state.currentPage + 5
-    } else if (currentPage === 'prev_5') {
-      page = this.state.currentPage - 5
+    } else {
+      page = currentPage
     }
     if (typeof this.props.onPageChange === 'function') {
       this.props.onPageChange(page)
@@ -65,9 +68,7 @@ export default class Pagination extends React.Component {
   @autobind
   handeClick () {
     const {jumpPage, pages} = this.state
-    if (typeof jumpPage === 'number' && jumpPage > 0 && jumpPage <= pages) {
-      this.handlePageChange(jumpPage)
-    }
+    this.handlePageChange(jumpPage)
   }
   render () {
     const {currentPage, pages, locale, disabled} = this.state
@@ -112,7 +113,7 @@ export default class Pagination extends React.Component {
       }
       showPageArray.push(nextFivePages)
       showPageArray.push(lastPage)
-    } else if (pages > 10 && currentPage >= pages - 5) {
+    } else {
       showPageArray.push(firstPage)
       showPageArray.push(prevFivePages)
       for (let i = pages - 5; i < pages; i++) {
