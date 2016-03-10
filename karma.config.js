@@ -30,11 +30,11 @@ module.exports = function (config) {
     webpack: {
       devtool: 'inline-source-map',
       module: {
-        preloaders: [{
-          exclude: /node_modules/,
+        preLoaders: [{
+          exclude: /node_modules|tests/,
           loader: 'isparta',
-          test: '/\.jsx?$/',
-          include: './src'
+          test: /\.jsx?$/,
+          include: /src/
         }],
         loaders: [{
           exclude: /node_modules/,
