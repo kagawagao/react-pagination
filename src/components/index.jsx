@@ -30,6 +30,22 @@ export default class Pagination extends React.Component {
     }
   }
 
+  componentWillReceiveProps (nextProps) {
+    const {currentPage, total, size, locale = {
+      next_5: 'Next 5 pages',
+      prev_5: 'Previous 5 pages',
+      last_page: 'Last Page',
+      next_page: 'Next page',
+      prev_page: 'Previous page',
+      jump: 'Jump'
+    }} = nextProps
+    this.setState({
+      currentPage: currentPage || 1,
+      pages: Math.ceil(total / size),
+      locale
+    })
+  }
+
   @autobind
   handlePageChange (currentPage) {
     let page
