@@ -1,6 +1,6 @@
 {
   "name": "nd-rc-pagination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React UI Component - Pagination",
   "main": "lib/index.js",
   "directories": {
@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "autobind-decorator": "^1.3.3",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.7.0",
     "react": "^0.14.7"
   },
   "devDependencies": {

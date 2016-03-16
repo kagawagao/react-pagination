@@ -1,4 +1,6 @@
 # React-Pagination
+## 1.0.1
+Remove unnecessary dependencies
 ## 1.0.0
 The release version, fix bug
 ## 0.1.0
