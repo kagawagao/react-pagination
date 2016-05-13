@@ -1,4 +1,4 @@
-module.exports = function (config) {
+export default (config) => {
   config.set({
     browsers: ['PhantomJS'],
     files: [
