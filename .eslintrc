@@ -40,8 +40,7 @@
     "import",
     "standard",
     "babel",
-    "promise",
-    "flow-vars"
+    "promise"
   ],
   "globals" : {
     "__DEV__" : false,
