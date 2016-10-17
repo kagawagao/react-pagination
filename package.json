@@ -57,7 +57,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "webpack": "^1.12.14",
-    "yargs": "^4.1.0"
+    "yargs": "^6.2.0"
   },
   "scripts": {
     "build": "babel src --out-dir lib",
