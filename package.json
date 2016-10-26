@@ -56,7 +56,7 @@
     "react-addons-test-utils": "^15.0.2",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "webpack": "^1.12.14",
+    "webpack": "^1.13.3",
     "yargs": "^4.1.0"
   },
   "scripts": {
